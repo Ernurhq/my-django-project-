@@ -1,0 +1,408 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+
+h1 {
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+h2 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 1.2em;
+}
+
+.hero {
+    background: url('your-image.jpg') center/cover no-repeat;
+    text-align: center;
+    padding: 100px 20px;
+    color: white;
+}
+
+.hero-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.btn-primary, .btn-secondary {
+    display: inline-block;
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: #ffcc00;
+    border: none;
+    color: black;
+}
+
+.btn-secondary {
+    background: transparent;
+    border: 2px solid white;
+    color: white;
+}
+
+.features {
+    text-align: center;
+    padding: 50px 20px;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.steps {
+    background: #f4f4f4;
+    padding: 50px 20px;
+    text-align: center;
+}
+
+.step-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+}
+
+.step {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    width: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.contact {
+    background: #222;
+    color: white;
+    text-align: center;
+    padding: 50px 20px;
+}
+
+.contact form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    border: none;
+}
+
+.contact button {
+    background: #ffcc00;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+body {
+    font-family: Arial, sans-serif;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        padding: 50px 10px;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+
+    .btn-primary, .btn-secondary {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .step-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .step {
+        width: 90%;
+    }
+}
+
+@media (max-width: 600px) {
+    .contact input, .contact textarea {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+
+    .contact button {
+        font-size: 1.2em;
+        padding: 15px;
+    }
+}
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+.hero-content {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.features, .steps, .contact {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.btn-primary, .btn-secondary {
+    transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+    background: #ff9900;
+    transform: scale(1.05);
+}
+
+.btn-secondary:hover {
+    background: white;
+    color: black;
+    transform: scale(1.05);
+}
+.hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-in-out;
+}
+
+.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero {
+    position: relative;
+    height: 100vh; /* Высота на весь экран */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('images/resume.jpeg') no-repeat center center/cover;
+}
+.hero {
+    position: relative;
+    height: 80vh; /* Средняя высота */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    background: url('images/resume.jpeg') no-repeat center center/cover;
+}
+
+/* Затемнение фона для читаемости текста */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Затемнение на 50% */
+}
+
+/* Контейнер, чтобы текст не перекрывался */
+.hero-content {
+    position: relative;
+    z-index: 1;
+    max-width: 80%;
+}
+
+/* Увеличенный, жирный шрифт */
+.hero h1 {
+    font-size: 3rem;
+    font-weight: bold;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+}
+
+/* Подзаголовок */
+.hero p {
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+/* Кнопки */
+.btn-primary {
+    background: yellow;
+    color: black;
+    font-size: 1.2rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background: transparent;
+    color: white;
+    font-size: 1.2rem;
+    padding: 10px 20px;
+    border: 2px solid white;
+    cursor: pointer;
+}
+.steps {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.steps-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.step {
+    display: flex;
+    align-items: flex-start;
+    max-width: 400px;
+    text-align: left;
+}
+
+.step-number {
+    background: yellow;
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    margin-right: 15px;
+    flex-shrink: 0;
+}
+
+.step-content h3 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.step-content p {
+    margin: 5px 0 0;
+    font-size: 16px;
+    color: #555;
+}
+/* Стили для всплывающего окна */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background: #fff;
+    padding: 20px;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.modal-content h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.modal-content label {
+    display: block;
+    margin: 10px 0 5px;
+    text-align: left;
+}
+
+.modal-content input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+.modal-content button {
+    background: #fbff00;
+    color: white;
+    border: none;
+    padding: 10px;
+    width: 100%;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.modal-content button:hover {
+    background: #e2e600;
+}
+
+/* Закрытие модального окна */
+.close {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 25px;
+    cursor: pointer;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); 
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 20px;
+    margin: 10% auto;
+    width: 350px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.close {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    font-size: 25px;
+    cursor: pointer;
+}
+html {
+    scroll-behavior: smooth;
+  }
+  
+.bg-yellow-custom {
+    background-color: #ffcc00 !important; /* Ярко-жёлтый цвет */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2) !important; /* Тень для выделения */
+}
