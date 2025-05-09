@@ -1,15 +1,18 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
+from .models import Message, Profile
 
+# Выбор роли
 ROLE_CHOICES = [
     ('applicant', 'Соискатель'),
     ('company', 'Предприятие'),
 ]
 
+# ✅ Регистрация
 class RegisterForm(UserCreationForm):
     email = forms.EmailField()
-    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)  # Добавляем выбор роли
+    role = forms.ChoiceField(choices=ROLE_CHOICES, widget=forms.RadioSelect)
 
     class Meta:
         model = User
@@ -18,13 +21,12 @@ class RegisterForm(UserCreationForm):
     def save(self, commit=True):
         user = super().save(commit=False)
         user.set_password(self.cleaned_data["password1"])
-        user.profile.role = self.cleaned_data["role"]  # Сохраняем роль
         if commit:
             user.save()
-            user.profile.save()  # Сохраняем профиль
+            # Профиль создаётся отдельно при регистрации (в views)
         return user
 
-from .models import Message
+# ✅ Форма сообщения
 class MessageForm(forms.ModelForm):
     class Meta:
         model = Message
@@ -33,3 +35,14 @@ class MessageForm(forms.ModelForm):
             'full_name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Введите ваше имя'}),
             'message': forms.Textarea(attrs={'class': 'form-control', 'placeholder': 'Введите ваше сообщение'}),
         }
+
+# ✅ Форма редактирования профиля
+class EditProfileForm(forms.ModelForm):
+    first_name = forms.CharField(max_length=30, required=False, label="Имя")
+    last_name = forms.CharField(max_length=30, required=False, label="Фамилия")
+    email = forms.EmailField(required=False, label="Email")
+    photo = forms.ImageField(required=False, label="Фото профиля")
+
+    class Meta:
+        model = Profile
+        fields = ['role']

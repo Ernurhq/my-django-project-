@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <style>
+        body { font-family: DejaVu Sans, sans-serif; font-size: 14px; }
+        h1 { text-align: center; margin-bottom: 30px; }
+        .section { margin-bottom: 20px; }
+    </style>
+</head>
+<body>
+    <h1>Резюме</h1>
+    <div class="section">
+        <strong>Имя пользователя:</strong> {{ profile.user.username }}
+    </div>
+    <div class="section">
+        <strong>Email:</strong> {{ profile.user.email }}
+    </div>
+    <div class="section">
+        <strong>Роль:</strong> {{ profile.get_role_display }}
+    </div>
+    <div class="section">
+        <strong>О себе:</strong>
+        <p>{{ profile.bio }}</p>
+    </div>
+</body>
+</html>
